@@ -8,7 +8,7 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 
 import '../../App.css'
-import style from './Sidebar.module.css'
+import style from './SideBar.module.css'
 import { AuthContext } from '../../context/AuthContext';
 
 const SideBar = () => {
