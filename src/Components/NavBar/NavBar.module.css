@@ -1,0 +1,20 @@
+.bell {
+  margin-top: .5rem;
+}
+
+.search {
+  position: relative;
+}
+
+.searchBox {
+  width: 212px;
+  margin-left: -1rem;
+}
+
+.lens {
+  position: absolute;
+  top: .7rem;
+  right: 2rem;
+  width: 14px;
+  height: 14px;
+}

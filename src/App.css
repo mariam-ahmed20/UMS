@@ -1,0 +1,61 @@
+.login-container {
+    background: linear-gradient(to right, rgba(254, 175, 0, 1), rgba(248, 212, 66, 1));
+}
+
+
+.main-container {
+    height: 100vh;
+    overflow-y:hidden;
+}
+
+.scroll {
+    height: 89vh;
+    overflow: auto;
+}
+
+@media (max-width: 576px) {
+  table thead {
+    display: none;
+  }
+
+  table, table tbody, table tr, table td {
+    display: block;
+    width: 100%;
+  }
+
+  table tr {
+    margin-bottom: 1rem;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+
+  table td {
+    text-align: center;
+    position: relative;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+h1 {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+hr {
+    border: 1px solid rgba(229, 229, 229, 1);
+}

@@ -1,0 +1,22 @@
+.sidebarContainer {
+    background-color: bisque;
+}
+
+.sidebarContainer a {
+    max-width: 193px;
+    margin: auto;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.active {
+    color: white;
+    background-color: rgba(254, 175, 0, 1);
+    border-radius: 8px;
+    max-width: 193px;
+    margin: auto;
+}
