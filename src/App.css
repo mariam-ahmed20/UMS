@@ -2,15 +2,23 @@
     background: linear-gradient(to right, rgba(254, 175, 0, 1), rgba(248, 212, 66, 1));
 }
 
-
 .main-container {
     height: 100vh;
     overflow-y:hidden;
 }
 
-.scroll {
-    height: 89vh;
-    overflow: auto;
+hr {
+    border: 1px solid rgba(229, 229, 229, 1);
+}
+
+h1 {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
 }
 
 @media (max-width: 576px) {
@@ -46,16 +54,4 @@
   }
 }
 
-h1 {
-    font-family: Montserrat;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 22px;
-    line-height: 100%;
-    letter-spacing: 0%;
 
-}
-
-hr {
-    border: 1px solid rgba(229, 229, 229, 1);
-}

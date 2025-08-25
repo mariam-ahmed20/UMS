@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
+import style from './UserList.module.css'
 
 
 
@@ -66,7 +67,7 @@ const UsersList = () => {
   }, [])
 
   return (
-    <div>
+    <div className={style.list}>
       <div className="d-flex justify-content-between">
         <h1>Users List</h1>
         <Link to="../adduser">
@@ -74,7 +75,7 @@ const UsersList = () => {
         </Link>
       </div>
       <hr />
-      <div className="scroll">
+      <div className={style.scroll}>
 
         <Table striped hover>
           <thead>
