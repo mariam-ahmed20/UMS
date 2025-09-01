@@ -1,11 +1,11 @@
 
 .scroll {
-    height: 89vh;
+    height: 87vh;
     overflow: auto;
 }
 
 
 .list {
-    padding: 1rem;
+    padding: 1%;
     background-color: rgb(249, 249, 248);
 }
