@@ -8,6 +8,7 @@ import { toast } from "react-toastify"
 const Edit = () => {  
   const {id} = useParams()
   const navigate = useNavigate()
+  const [loading, setLoading] = useState(true)
   let [user , setUser] = useState<User | null>(null)
   let handleEdit = async (data: Users) => {
     try {
@@ -30,10 +31,15 @@ const Edit = () => {
        } catch (error) {
          console.log(error)
        }
+       finally {
+       setLoading(false)
+      }
      }
     if (id)
     fetchUser()
   },[id])
+
+  if (loading) return <p>Loading...</p>
   return (
     <UserInfo  
     title="Edit Profile"
@@ -46,7 +52,7 @@ const Edit = () => {
     valueSix={user?.birthDate}
     onSubmit={handleEdit}
     />
-    
+
   )
 }
 
