@@ -34,7 +34,7 @@ const Edit = () => {
     if (id)
     fetchUser()
   },[id])
-  return (
+  return user? (
     <UserInfo  
     title="Edit Profile"
     button="Save Edits"
@@ -46,7 +46,9 @@ const Edit = () => {
     valueSix={user?.birthDate}
     onSubmit={handleEdit}
     />
-  )
+
+  ) : 
+  <p>Loading...</p>
 }
 
 export default Edit
