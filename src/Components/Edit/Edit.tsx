@@ -1,26 +1,38 @@
 import { useEffect, useState } from "react"
 import UserInfo from "../UserInfo/UserInfo"
-import type { User } from "../Inteerface"
+import type { User, Users } from "../Inteerface"
 import axios from "axios"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
 
 const Edit = () => {  
   const {id} = useParams()
+  const navigate = useNavigate()
   let [user , setUser] = useState<User | null>(null)
-  let showProfile = async() => {
+  let handleEdit = async (data: Users) => {
     try {
-      let response = await axios.put(`https://dummyjson.com/users/${id}`)
-      console.log(response?.data)
-      setUser(response?.data)
+      let response = await axios.put(`https://dummyjson.com/users/${id}`, data)
+      console.log(response)
+      toast.success("user edited")
+      navigate('/dashboard')
       
     } catch (error) {
+      toast.error("editing failed")
       console.log(error)
     }
   }
 
   useEffect (() => {
+    const fetchUser = async () => {
+       try {
+         let response = await axios.get(`https:dummyjson.com/users/${id}`)
+         setUser(response.data)
+       } catch (error) {
+         console.log(error)
+       }
+     }
     if (id)
-    showProfile();
+    fetchUser()
   },[id])
   return (
     <UserInfo  
@@ -32,7 +44,7 @@ const Edit = () => {
     valueFour={user?.age}
     valueFive={user?.phone}
     valueSix={user?.birthDate}
-    message="user edited"
+    onSubmit={handleEdit}
     />
   )
 }

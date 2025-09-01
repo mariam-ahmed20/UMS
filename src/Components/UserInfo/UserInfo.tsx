@@ -1,36 +1,18 @@
 import type { UserInfoProps , Users } from '../Inteerface'
 import {useForm} from "react-hook-form"
-import axios from 'axios';
-import { toast } from 'react-toastify';
 import style from './UserInfo.module.css'
-import { useNavigate } from 'react-router-dom';
 
 
 
 function UserInfo( {title , placeholderOne , placeholderTwo , placeholderThree, 
     placeholderFour , placeholderFive , placeholderSix , 
     button , showButton = true , readOnly = false , src , showImg = false ,
-    valueOne , valueTwo , valueThree , valueFour , valueFive , valueSix , message}:UserInfoProps) {
+    valueOne , valueTwo , valueThree , valueFour , valueFive , valueSix , onSubmit}:UserInfoProps & { onSubmit?: (data: Users) => void }) {
 
 
 
     let{ register, handleSubmit, formState:{errors}}= useForm<Users>()
-    let navigate = useNavigate()
-    let onSubmit = async(data:Users)=>{
 
-      try {
-          let response = await axios.post("https://dummyjson.com/users/add",data)
-          console.log(response)
-          toast.success(message)
-          navigate('/dashboard')
-
-      } 
-      catch (error) {
-          toast.error("sorry adding failed!")
-          console.log(error);
-      }
-      console.log(data)
-    }
   return (
     <>
       <div className={`p-3 vh-100 ${style.main}`}>
@@ -38,7 +20,7 @@ function UserInfo( {title , placeholderOne , placeholderTwo , placeholderThree,
           {title}
         </h1>
         <hr />
-        <form onSubmit={handleSubmit(onSubmit)} className={`p-5 ${style.container}`} >
+        <form onSubmit={handleSubmit(onSubmit || (() => {}))} className={`p-5 ${style.container}`} >
           {showImg && (
             <div className={style.img}>
               <img src={src} alt="user-image" className='rounded-circle'/>
