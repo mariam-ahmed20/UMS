@@ -26,7 +26,7 @@ const Edit = () => {
   useEffect (() => {
     const fetchUser = async () => {
        try {
-         let response = await axios.get(`https:dummyjson.com/users/${id}`)
+         let response = await axios.get(`https://dummyjson.com/users/${id}`)
          setUser(response.data)
        } catch (error) {
          console.log(error)
