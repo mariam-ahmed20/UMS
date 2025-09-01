@@ -50,13 +50,13 @@ const Login = () => {
 
 
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <label>userName</label>
+                            <label>UserName</label>
                             <input className="form-control" type="text" placeholder="enter username"
                             {...register("username", {required:"username is req!!"})}
                             />
                             {errors.username && <span className="text-danger">{errors.username.message}</span>}
                             
-                            <label>password</label>
+                            <label>Password</label>
                             <input className="form-control" type="password" placeholder="enter password"
                             {...register("password", {required:"pass is req!!"})}
                             />
